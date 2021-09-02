@@ -1,3 +1,57 @@
-001|Trần Văn Hoài|Đừng dừng lại|l7NIXRWlZ4I
-002|not me|Hãy sống|qdk2KYVKQC8
-003|im herre|Bước tiếp|lR7aT9v3JCE
+001|Gặp Gỡ, Yêu Đương Và Được Bên Em|Phan Mạnh Quỳnh|Xh0YQp9odv4
+002|Thức Giấc|Da Lab|R3trO4a49go
+003|Nàng Thơ|Hoàng Dũng|Tqv0x1_QJlo
+004|Tháng Năm|SOOBIN|sG9JhIRuTkA
+005|3107-3|Nâu,Duongg,Titie|kfw7MYah2n0
+006|Nhật Kí Của Mẹ|Hiền Thục|3Waf1Gy9d90
+007|Chiếc Khăn Gió Ấm|Khánh Phương|ijajoDzY-2k
+008|Rồi Người Thương Cũng Hoá Người Dưng|Hiền Hồ|2_f6Q3GjFi4
+009|Ngày Chưa Giông Bão|BÙI LAN HƯƠNG|nO8MD4LtXao
+010|Âm Thầm Bên Em|Sơn Tùng MTP|-ZgI-XcGXHQ
+011|Sau Tất Cả|Erik|eEZpywMUzGI
+012|Bạc Phận|K-ICM ft. JACK|cdk2mDuKm38
+013|Lạ Lùng|Vũ|TUKYEpQxnr0
+014|Độ Tộc 2|MASEW x PHÚC DU x PHÁO x ĐỘ MIXI|mzY79o6oy7U
+015|Mặt Trái Của Sự Thật|HKT|5IVYz_paBUw
+016|Trú Mưa|HKT|GeYCHuZNbcw
+017|Cứ Chill Thôi|Chillies ft Suni Hạ Linh & Rhymastic|AvvbNqbCscA
+018|Không Sao Mà Em Đây Rồi|Suni Hạ Linh|C6L3dZB-UuY
+019|Cầu Vồng Khuyết|Tuấn Hưng|ylHwuVG9PNo
+020|Lạc Trôi|Sơn Tùng MTP|s6cuWem4KZA
+021|Đường Tôi Chở Em Về|Buitruonglinh|s1bQWUpp9mE
+022|Dù Cho Mai Về Sau|Buitruonglinh|F8mQalkgPaQ
+023|Tháng Năm|SOOBIN x SLIMV|BwEoS9olnQA
+024|Công Chúa Bong Bóng|Bảo Thy|6kMQz_6rrGg
+025|Xe Đạp|Thùy Chi|DcETDzRvPmg
+026|Ánh Nắng Của Anh|ĐỨC PHÚC|Ci39Kcp9UGo
+027|Anh Thanh Niên|HuyR|oTHl93SSOQc
+028|Bỏ Em vào Balo|Tân Trần|tFSLSsjXlds
+029|Cánh Bướm Dối Gian|Phí Phương Anh|HRFJ1CPWwXU
+030|Teen Vọng Cổ|Vĩnh Thuyên Kim|d_VrdW-rCAY
+031|Người Ấy|Trịnh Thăng Bình|W28JKVJsuXM
+032|Vợ Người Ta|Phan Mạnh Quỳnh|WIj5lxOLXe4
+033|Có Chàng Trai Viết Lên Cây|Phan Mạnh Quỳnh|16EjlVRTpTI
+034|3 1 0 7|Dươngg x Nâu|-yqMKdhQv_o
+035|Ý Em Sao|Kay Trần|qbpkDYHQdUo
+036|Đi Về Nhà|Đen x JustaTee|vma2qR3wQ_A
+037|Đố Em Biết Anh Đang Nghĩ Gì|Đen|NPTLOGxEcGk
+038|Đưa Nhau Đi Trốn|Đen ft Linh Cáo|nlbL2BHxm6c
+039|Anh Nhớ Em|Tuấn Hưng|gZY9BGGvosE
+040|Đom Đóm|Jack|JIbmJawdad4
+041|#AiChoAi|Flod; M|OqJSCU4Pkos
+042|Hết Thương Cạn Nhớ|Đức Phúc|TD-X3KtJYsw
+043|Sài Gòn Đau Lòng Quá|HỨA KIM TUYỀN x HOÀNG DUYÊN|CAzPV_o8ULw
+044|Trên Tình Bạn Dưới Tình Yêu|MIN|0fWF362oPl4
+045|Nắm Đôi Bàn Tay|Kay Trần|DPOP1eYWoZM
+046|Có Hẹn Với Thanh Xuân|MONSTAR|QKOBOcKSBDY
+047|Lỡ Say Bye Là Bye|Lemese, Changg|W_xBvP4FT-4
+048|Crying Over You|JustaTee, Binz|PllPCune3fY
+049|Tình Nhân Ơi|Superbrothers, Orange, Binz|GWSpuXX4mUU
+050|Gene|Binz, Touliver|zejUMLDBHA4
+051|Đi Đu Đưa Đi|Bích Phương|Id1yrzjfHno
+052|Bùa Yêu|Bích Phương|ILdSCMtljmk
+053|Một Mình Có Buồn Không|Thiều Bảo Trâm, Lou Hoàng|gNOrnJNoqbc
+054|Phải Chăng Em Đã Yêu?|Juky San, RedT|4OSfT1mKs1M
+055|This Way|CARA|-2NfznBmD7s
+056|Túy Âm|Xesi x Masew|DwtJ9g8vvXk
+057|Hôm Nay Tôi Cô Đơn Quá|Tóc Tiên, Rhymastic|JTLeUu8EeP8
