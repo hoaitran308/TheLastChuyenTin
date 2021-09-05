@@ -23,6 +23,7 @@ namespace TheLastChuyenTin
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<MusicRepository>();
+            services.AddSingleton<ImageRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

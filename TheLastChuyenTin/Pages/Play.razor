@@ -1,98 +1,57 @@
 ﻿@page "/play"
-
-@using System.Threading
-@using System.IO
-@using TheLastChuyenTin.Models
 @using TheLastChuyenTin.Repository
 
-@inject MusicRepository MusicRepository
+@inject ImageRepository ImageRepository
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th scope="row">Fuho</th><td>Hoàng Khiêm</td><td>Kiều My</td><td>Thu Trang</td><td>Nhật Hào</td><td>Quốc Bảo</td><td>Nhật Anh</td><td>Đông Triều</td><td>Hữu Phúc</td><td>Công Đạt</td><td>Trung Huy</td><td>Duy Thanh</td><td>Cô Tâm</td> 
+    </tr>
+    <tr>
+      <th scope="row">Who R U</th><td>Kim Ngân</td><td>Tường Phúc</td><td>Duy Anh</td><td>Hồng Trinh</td><td>Văn Đạt</td><td>Minh Kha</td><td>Nhật Hiền</td><td>Nhã Thanh</td><td>Tuyết Sương</td><td>Công Bình</td><td>Bích Trâm</td>
+    </tr>
+    <tr>
+      <th scope="row">Z-Dict</th><td>Triển Nguyên</td><td>Anh Lực</td><td>Ngọc Ánh</td><td>Đức Thành</td><td>Kim Chi</td><td>Vũ Hoàng</td><td>Thanh Duy</td><td>Anh Tuấn</td><td>Bảo Trân</td><td>Anh Quốc</td><td>Dương Khang</td><td>Hồng Thắm</td>
+    </tr>    
+    <tr>
+      <th scope="row">Be Yourself</th><td>Mỹ Quỳnh</td><td>Xuân Phong</td><td>Thị Lý</td><td>Quốc Thắng</td><td>Thủy Tiên</td><td>Hữu Bằng</td><td>Phương Khánh</td><td>Huy Hải</td><td>Công Chính</td><td>Đức Hùng</td><td>Trung Vũ</td><td>Văn Tiến</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="alert alert-info">
-	<button @onclick="Find" class="btn btn-success">Tìm bài</button>
-	@if (!MusicRepository.Check() && music is null)
-	{
-		<hr /><h1>Hết nhạc rồi bà nộu</h1>
-	}
-	else
-	{
-		@if (music is not null)
-		{
-			<hr /><span>Đây là bài nhạc số <b>@music.Id</b></span>
-		}
-	}
+    <button @onclick="LetGo" class="btn btn-success">Let's Go</button> <button @onclick="Reset" class="btn btn-warning">Reset</button>
 </div>
-
-@if (music is not null)
+@if (count != -1)
 {
-	<div class="alert alert-success">
-		<button @onclick="StartTime" class="btn @(aTimer is null ? "btn-primary" : "btn-danger")"> @(aTimer is null ? "Bắt đầu" : "Dừng lại")</button><hr />
-
-		Thời gian: <b style="color:red">@Count</b> giây<hr />
-		@if (totalSecond != 0)
-		{
-			<span>Của bạn hết tổng cộng <b style="color: blue">@totalSecond </b> giây!</span><hr />
-		}
-		@if (aTimer is not null)
-		{
-			<audio autoplay controls><source src="/musics/@(music.Id).mp3#t=@TimeSpan.FromSeconds(totalSecond)" /></audio>
-		}
-		else
-		{
-			<audio controls muted><source src="/musics/@(music.Id).mp3#t=@TimeSpan.FromSeconds(totalSecond)" /></audio>
-		}
-	</div>
-	<div class="card">
-		<button @onclick="(() => showInfo = !showInfo)" class="btn btn-light">Xem thông tin bài hát</button>
-		@if (showInfo)
-		{
-			<div class="card-body">
-				Tên bài hát: @music.Name<hr />
-				Ca sĩ: @music.Singer<hr />
-				Xem ngay nèk:<hr />
-				<iframe width="1280" height="720" src="https://www.youtube.com/embed/@(music.Link)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-			</div>
-		}
-	</div>
+    @if (count == key)
+    {
+        <MusicComp />
+    }
+    else
+    {
+        <ImageComp ImageId="@random.Next(0, ImageRepository.Total())" />
+    }
 }
 
 @code {
+    private Random random = new();
+    private int count = -1;
+    private int key = 3;
 
-	private int Count { get; set; } = 0;
-	private Music music;
-	private bool showInfo = false;
-	private int totalSecond;
+    private void LetGo()
+    {
+        if (count == 3)
+        {
+            Reset();
+        }
+        count++;
+    }
 
-	private static System.Timers.Timer aTimer;
-
-	private void Find()
-	{
-		if (aTimer is not null)
-		{
-			StartTime();
-		}
-		showInfo = false;
-		music = MusicRepository.GetRandomMusic();
-		totalSecond = 0;
-	}
-
-	private void StartTime()
-	{
-		if (aTimer is null)
-		{
-			aTimer = new System.Timers.Timer(1000);
-			aTimer.Elapsed += (sender, args) => { Count++; InvokeAsync(StateHasChanged); };
-			aTimer.AutoReset = true;
-			aTimer.Enabled = true;
-		}
-		else
-		{
-			totalSecond += Count;
-			Count = 0;
-			aTimer.Stop();
-			aTimer.Dispose();
-			aTimer = null;
-		}
-	}
-
+    private void Reset()
+    {
+        count = -1;
+        key = random.Next(0, 4);
+    }
 }

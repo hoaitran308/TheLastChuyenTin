@@ -1,0 +1,84 @@
+﻿@using System.Threading
+@using System.IO
+@using TheLastChuyenTin.Models
+@using TheLastChuyenTin.Repository
+
+@inject MusicRepository MusicRepository
+
+@if (music is not null)
+{
+	<div class="alert alert-success">
+		<button @onclick="StartTime" class="btn @(aTimer is null ? "btn-primary" : "btn-danger")"> @(aTimer is null ? "Bắt đầu" : "Dừng lại")</button><hr />
+
+		Thời gian: <b style="color:red">@Count</b> giây<hr />
+		@if (totalSecond != 0)
+		{
+			<span>Của bạn hết tổng cộng <b style="color: blue">@totalSecond </b> giây!</span><hr />
+		}
+		@if (aTimer is not null)
+		{
+			<audio autoplay controls><source src="/musics/@(music.Id).mp3#t=@TimeSpan.FromSeconds(totalSecond)" /></audio>
+		}
+		else
+		{
+			<audio controls muted><source src="/musics/@(music.Id).mp3#t=@TimeSpan.FromSeconds(totalSecond)" /></audio>
+		}
+	</div>
+	<div class="card">
+		<button @onclick="(() => showInfo = !showInfo)" class="btn btn-light">Xem thông tin bài hát</button>
+		@if (showInfo)
+		{
+			<div class="card-body">
+				Tên bài hát: @music.Name<hr />
+				Ca sĩ: @music.Singer<hr />
+				Xem ngay nèk:<hr />
+				<iframe width="1280" height="720" src="https://www.youtube.com/embed/@(music.Link)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		}
+	</div>
+}
+
+@code {
+	private int Count { get; set; } = 0;
+
+	private Music music;
+	private bool showInfo = false;
+	private int totalSecond;
+
+	private static System.Timers.Timer aTimer;
+
+	protected override void OnInitialized()
+	{
+		Find();
+	}
+
+	private void Find()
+	{
+		if (aTimer is not null)
+		{
+			StartTime();
+		}
+		showInfo = false;
+		music = MusicRepository.GetRandomMusic();
+		totalSecond = 0;
+	}
+
+	private void StartTime()
+	{
+		if (aTimer is null)
+		{
+			aTimer = new System.Timers.Timer(1000);
+			aTimer.Elapsed += (sender, args) => { Count++; InvokeAsync(StateHasChanged); };
+			aTimer.AutoReset = true;
+			aTimer.Enabled = true;
+		}
+		else
+		{
+			totalSecond += Count;
+			Count = 0;
+			aTimer.Stop();
+			aTimer.Dispose();
+			aTimer = null;
+		}
+	}
+}
